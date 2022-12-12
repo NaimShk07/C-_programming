@@ -45,5 +45,6 @@ int main()
 {
        demo d;
        d.cal();
+       
        return 0;
 }
