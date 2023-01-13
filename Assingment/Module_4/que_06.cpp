@@ -2,26 +2,26 @@
 #include <string>
 using namespace std;
 
-class Book
+class BookShop
 {
 private:
-       string authorName;
+       string author;
        string title;
-       int price;
+       double price;
        string publisher;
 
 public:
-       Book(string authore, string titlee, int pricee, string publishere)
+       void assignValues(string a, string t, double p, string pub)
        {
-              authorName = authore;
-              title = titlee;
-              price = pricee;
-              publisher = publishere;
+              author = a;
+              title = t;
+              price = p;
+              publisher = pub;
        }
 
        void display()
        {
-              cout << "Author: " << authorName << endl;
+              cout << "Author: " << author << endl;
               cout << "Title: " << title << endl;
               cout << "Price: " << price << endl;
               cout << "Publisher: " << publisher << endl;
@@ -30,8 +30,9 @@ public:
 
 int main()
 {
-       Book book1("Dale Carnegie", "How to win friends and influence people", 170, "Simon");
-       
+       BookShop book1;
+       book1.assignValues("Dale Carnegie", "How to win friends and influence people", 170, "Simon");
+
        book1.display();
        return 0;
 }

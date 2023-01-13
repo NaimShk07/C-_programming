@@ -5,18 +5,18 @@ using namespace std;
 class BankAccount
 {
 private:
-       string depositorName;
+       string name;
        int accountNumber;
-       string accountType;
+       string typeOfAccount;
        int balance;
 
 public:
-       BankAccount(string name, int number, string type, int bal)
+       void assignValues(string n, int a, string t, int b)
        {
-              depositorName = name;
-              accountNumber = number;
-              accountType = type;
-              balance = bal;
+              name = n;
+              accountNumber = a;
+              typeOfAccount = t;
+              balance = b;
        }
 
        void deposit(int amount)
@@ -28,31 +28,31 @@ public:
        {
               if (amount > balance)
               {
-                     cout << "Insufficient balance!" << std::endl;
+                     cout << "Insufficient balance!" << endl;
               }
               else
               {
                      balance -= amount;
               }
        }
-
        void display()
        {
-              cout << "Depositor Name: " << depositorName << std::endl;
-              cout << "Account Number: " << accountNumber << std::endl;
-              cout << "Account Type: " << accountType << std::endl;
-              cout << "Balance: " << balance << std::endl;
+              cout << "Depositor Name: " << name << endl;
+              cout << "Account Number: " << accountNumber << endl;
+              cout << "Account Type: " << typeOfAccount << endl;
+              cout << "Balance: " << balance << endl;
        }
 };
 
 int main()
 {
-       BankAccount account("Naim Shaikh", 12345, "Savings", 1000);
-       account.display();
-       account.deposit(500.0);
-       account.display();
-       account.withdraw(1500.0);
-       account.display();
+       BankAccount person1;
+       person1.assignValues("Naim Shaikh", 12345, "Savings", 1000);
+       person1.display();
+       person1.deposit(500.0);
+       person1.display();
+       person1.withdraw(1500.0);
+       person1.display();
 
        return 0;
 }
